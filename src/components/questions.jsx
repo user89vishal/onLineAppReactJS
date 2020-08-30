@@ -6,13 +6,12 @@ import dataFromJsonFile from "../service/allQuestions.json";
 
 function Question(props) {
   const questions = dataFromJsonFile.questions;
-
   const [pageNumber, setPageNumber] = useState(0);
 
   const handlePageChange = (page) => {
     if (page === "Previous" && pageNumber !== 0) {
       return setPageNumber(pageNumber - 1);
-    } else if (page === "Next" && pageNumber !== 2) {
+    } else if (page === "Next" && pageNumber !== questions.length - 1) {
       return setPageNumber(pageNumber + 1);
     } else if (page !== "Previous" && page !== "Next") {
       setPageNumber(page - 1);
@@ -20,7 +19,7 @@ function Question(props) {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="container">
       <ViewQuestion pageNumber={pageNumber} data={questions} />
       <Pagination
         activePageNumber={pageNumber + 1}

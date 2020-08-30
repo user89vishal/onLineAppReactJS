@@ -12,10 +12,12 @@
     },
     {
       "id": 2,
-      "question": "Javascript string using double quotes is exactly the same as a string using single quotes",
+      "question": "Which of the following function of String object returns the character at the specified index?",
       "answers": [
-        { "OptionId": "A", "ans": "True" },
-        { "OptionId": "B", "ans": "False" }
+        { "OptionId": "A", "ans": "charAt()" },
+        { "OptionId": "B", "ans": "charCodeAt()" },
+        { "OptionId": "C", "ans": "concat()" },
+        { "OptionId": "D", "ans": "indexOf()" }
       ]
     },
     {
@@ -38,6 +40,26 @@
           "OptionId": "D",
           "ans": "None of the above."
         }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which built-in method returns the calling string value converted to upper case?",
+      "answers": [
+        { "OptionId": "A", "ans": "toUpperCase()" },
+        { "OptionId": "B", "ans": "toUpper()" },
+        { "OptionId": "C", "ans": "changeCase(case)" },
+        { "OptionId": "D", "ans": "None of the above." }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which of the following function of String object splits a String object into an array of strings by separating the string into substrings?",
+      "answers": [
+        { "OptionId": "A", "ans": "slice()" },
+        { "OptionId": "B", "ans": "split()" },
+        { "OptionId": "C", "ans": "replace()" },
+        { "OptionId": "D", "ans": "search()" }
       ]
     }
   ]
