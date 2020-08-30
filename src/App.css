@@ -24,6 +24,26 @@
   color: white;
 }
 
+.question-container {
+  height: 500;
+  width: 100%;
+}
+
+.button-container {
+  height: 100;
+  width: 100%;
+}
+
+.btn_left {
+  margin-right: 20px;
+  width: 200px;
+}
+
+.btn_right {
+  margin-left: 20px;
+  width: 200px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +56,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* var name = "abc";
+
+  function call() {
+    console.log(name);
+    if (!name) {
+      var name = "xyz";
+    }
+  }
+  call();
+
+
+  class New {
+    static func() {
+        console.log('function is calling');
+    }
+    function() {
+        console.log('Normal function is calling');
+    }
+} */

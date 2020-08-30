@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which one is standard way to show popup in Java Script?",
+      "answers": [
+        { "OptionId": "A", "ans": "window.alert(cppbuzz)" },
+        { "OptionId": "B", "ans": "alert(cppbuzz)" },
+        { "OptionId": "C", "ans": "window(cppbuzz)" },
+        { "OptionId": "D", "ans": "alert(cppbuzz)" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Javascript string using double quotes is exactly the same as a string using single quotes",
+      "answers": [
+        { "OptionId": "A", "ans": "True" },
+        { "OptionId": "B", "ans": "False" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which of the following is true about variable naming conventions in JavaScript?",
+      "answers": [
+        {
+          "OptionId": "A",
+          "ans": "You should not use any of the JavaScript reserved keyword as variable name."
+        },
+        {
+          "OptionId": "B",
+          "ans": "JavaScript variable names should not start with a numeral (0-9)"
+        },
+        {
+          "OptionId": "C",
+          "ans": "Both of the above."
+        },
+        {
+          "OptionId": "D",
+          "ans": "None of the above."
+        }
+      ]
+    }
+  ]
+}
