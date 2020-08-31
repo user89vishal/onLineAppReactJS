@@ -20,13 +20,13 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const errors = validate();
-    console.log(errors);
-    setErrors(errors);
+    setErrors(errors || {});
 
-    // const result = Joi.validate(email, schema);
-
-    // console.log(errors);
+    if (!errors) {
+      console.log("No error", email, password, username);
+    }
   };
 
   const handleChange = (e) => {
@@ -48,6 +48,7 @@ const Register = () => {
           value={email}
           handleChange={handleChange}
           type="text"
+          error={errors.email}
         />
 
         <Input
@@ -56,6 +57,7 @@ const Register = () => {
           value={password}
           handleChange={handleChange}
           type="password"
+          error={errors.password}
         />
 
         <Input
@@ -64,6 +66,7 @@ const Register = () => {
           value={username}
           handleChange={handleChange}
           type="text"
+          error={errors.username}
         />
 
         <button className="btn btn-primary">Submit</button>
