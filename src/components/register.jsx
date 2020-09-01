@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { login, saveUser } from "../redux/action/actions";
+
 import Input from "../common/input";
 
-const Register = () => {
+const Register = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
   const [errors, setErrors] = useState({});
+
+  const dispatch = useDispatch();
 
   const validate = () => {
     const errors = {};
@@ -25,7 +30,21 @@ const Register = () => {
     setErrors(errors || {});
 
     if (!errors) {
-      console.log("No error", email, password, username);
+      //Saving login state in Redux
+      dispatch(login());
+
+      let user = {
+        username: username,
+        email: email,
+        password: password,
+      };
+
+      dispatch(saveUser(user));
+
+      props.history.replace({
+        pathname: "/viewInfo",
+        state: { email: email, password: password, username: username },
+      });
     }
   };
 
@@ -39,7 +58,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <Input

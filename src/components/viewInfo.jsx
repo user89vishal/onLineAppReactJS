@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import _ from "lodash";
 
 import QuizInfo from "./quizInfo";
@@ -30,9 +31,14 @@ const examLevel = [
   },
 ];
 
-const ViewInfo = () => {
+const ViewInfo = (props) => {
   const [levelId, setLevelId] = useState(0);
   const [agree, setAgree] = useState(false);
+
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  // console.log("isLoggedIn-->>>>", isLoggedIn);
+  const user = useSelector((state) => state.user);
+  console.log("User-->>>>", user);
 
   const handleClick = (level) => {
     setLevelId(level.levelId);
@@ -40,10 +46,17 @@ const ViewInfo = () => {
 
   const handleStartButton = () => {
     console.log("Quiz start", levelId, agree);
+    props.history.push({
+      pathname: "/quiz-start",
+      state: { levelId: levelId, agree: agree },
+    });
   };
 
   return (
     <div className="container">
+      <h5 className="mt-3">
+        Welcome {props.location.state.username.toUpperCase()}
+      </h5>
       <ul className="list-group mt-5">
         {examLevel.map((level) => (
           <li
