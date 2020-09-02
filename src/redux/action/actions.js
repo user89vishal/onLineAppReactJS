@@ -7,10 +7,14 @@ export function decrement() {
   return { type: "decrement" };
 }
 
-export function login() {
-  return { type: "login" };
+export function logout() {
+  return { type: "logout" };
 }
 
 export function saveUser(user) {
   return { type: "saveUser", value: user };
+}
+
+export function saveOption(option) {
+  return { type: "saveOption", value: option };
 }

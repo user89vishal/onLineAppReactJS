@@ -1,12 +1,32 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { saveOption } from "../redux/action/actions";
 
 function ViewQuestion(props) {
-  const { pageNumber, data } = props;
+  const { pageNumber, data, onPageChange } = props;
   const [optionId, setOptionId] = useState("");
+  const [questionId, setQuestionId] = useState("");
+
+  const answers = useSelector((state) => state.answers);
+
+  const dispatch = useDispatch();
 
   const handleListClick = (optionObject) => {
     setOptionId(optionObject.OptionId);
+    setQuestionId(data[pageNumber].id);
   };
+
+  function handleClick() {
+    dispatch(
+      saveOption({
+        qusId: questionId,
+        ansId: optionId,
+        correctOption: data[pageNumber].correctOption,
+      })
+    );
+    onPageChange(pageNumber + 2);
+    setOptionId("");
+  }
 
   return (
     <div className="m-5">
@@ -32,7 +52,12 @@ function ViewQuestion(props) {
       </ul>
 
       <div className="d-flex justify-content-center m-4">
-        <button type="button" className="btn btn-outline-success">
+        <button
+          type="button"
+          className="btn btn-primary"
+          disabled={optionId ? false : true}
+          onClick={handleClick}
+        >
           Submit
         </button>
       </div>

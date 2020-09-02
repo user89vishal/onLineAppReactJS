@@ -10,23 +10,23 @@ function saveToLocalStorage(state) {
   }
 }
 
-// function loadFromLocalStorage() {
-//   try {
-//     const serializeState = localStorage.getItem("state");
-//     if (serializeState === null) return undefined;
-//     return JSON.parse(serializeState);
-//   } catch (e) {
-//     console.log("Error while retriving from localStorage", e);
-//     return undefined;
-//   }
-// }
+function loadFromLocalStorage() {
+  try {
+    const serializeState = localStorage.getItem("state");
+    if (serializeState === null) return undefined;
+    return JSON.parse(serializeState);
+  } catch (e) {
+    console.log("Error while retriving from localStorage", e);
+    return undefined;
+  }
+}
 
-// const persistedState = loadFromLocalStorage();
-// console.log("persistedState", persistedState);
+const persistedState = loadFromLocalStorage();
+console.log("persistedState", persistedState);
 
 const store = createStore(
   rootReducer,
-  // persistedState,
+  persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

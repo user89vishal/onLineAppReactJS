@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-const navBar = () => {
+const NavBar = ({ handleLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -29,10 +30,19 @@ const navBar = () => {
               Time Remaining 00:32
             </a>
           </li>
+          <li
+            className="nav-item active"
+            style={{ cursor: "pointer" }}
+            onClick={handleLogout}
+          >
+            <a className="nav-link" to="/">
+              Logout
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
   );
 };
 
-export default navBar;
+export default NavBar;

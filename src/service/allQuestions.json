@@ -8,7 +8,8 @@
         { "OptionId": "B", "ans": "alert(cppbuzz)" },
         { "OptionId": "C", "ans": "window(cppbuzz)" },
         { "OptionId": "D", "ans": "alert(cppbuzz)" }
-      ]
+      ],
+      "correctOption": "A"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
         { "OptionId": "B", "ans": "charCodeAt()" },
         { "OptionId": "C", "ans": "concat()" },
         { "OptionId": "D", "ans": "indexOf()" }
-      ]
+      ],
+      "correctOption": "A"
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
           "OptionId": "D",
           "ans": "None of the above."
         }
-      ]
+      ],
+      "correctOption": "A"
     },
     {
       "id": 4,
@@ -50,7 +53,8 @@
         { "OptionId": "B", "ans": "toUpper()" },
         { "OptionId": "C", "ans": "changeCase(case)" },
         { "OptionId": "D", "ans": "None of the above." }
-      ]
+      ],
+      "correctOption": "A"
     },
     {
       "id": 4,
@@ -60,7 +64,8 @@
         { "OptionId": "B", "ans": "split()" },
         { "OptionId": "C", "ans": "replace()" },
         { "OptionId": "D", "ans": "search()" }
-      ]
+      ],
+      "correctOption": "A"
     }
   ]
 }

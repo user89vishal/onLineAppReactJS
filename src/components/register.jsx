@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { login, saveUser } from "../redux/action/actions";
+import { saveUser } from "../redux/action/actions";
 
 import Input from "../common/input";
 
@@ -9,6 +9,16 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
   const [errors, setErrors] = useState({});
+
+  const user = useSelector((state) => state.user);
+
+  // useEffect(() => {
+  //   if (user.email) {
+  //     props.history.replace({
+  //       pathname: "/viewInfo",
+  //     });
+  //   }
+  // }, []);
 
   const dispatch = useDispatch();
 
@@ -31,8 +41,6 @@ const Register = (props) => {
 
     if (!errors) {
       //Saving login state in Redux
-      dispatch(login());
-
       let user = {
         username: username,
         email: email,
@@ -43,7 +51,6 @@ const Register = (props) => {
 
       props.history.replace({
         pathname: "/viewInfo",
-        state: { email: email, password: password, username: username },
       });
     }
   };

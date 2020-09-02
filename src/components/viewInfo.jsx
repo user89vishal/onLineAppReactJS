@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import _ from "lodash";
 
@@ -35,10 +35,15 @@ const ViewInfo = (props) => {
   const [levelId, setLevelId] = useState(0);
   const [agree, setAgree] = useState(false);
 
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  // console.log("isLoggedIn-->>>>", isLoggedIn);
   const user = useSelector((state) => state.user);
-  console.log("User-->>>>", user);
+
+  useEffect(() => {
+    if (!user.email) {
+      props.history.replace({
+        pathname: "/",
+      });
+    }
+  }, []);
 
   const handleClick = (level) => {
     setLevelId(level.levelId);
@@ -54,9 +59,7 @@ const ViewInfo = (props) => {
 
   return (
     <div className="container">
-      <h5 className="mt-3">
-        Welcome {props.location.state.username.toUpperCase()}
-      </h5>
+      <h5 className="mt-3">Welcome {user.username.toUpperCase()}</h5>
       <ul className="list-group mt-5">
         {examLevel.map((level) => (
           <li
