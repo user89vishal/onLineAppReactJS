@@ -10,19 +10,24 @@ const QuizSummry = (props) => {
   const skillLevel = useSelector((state) => state.skillLevel);
   const user = useSelector((state) => state.user);
   const counter = useSelector((state) => state.counter);
-  // const timeTaken = millisToMinutesAndSeconds(counter);
 
-  const timeTaken = 0;
+  let timeTaken = 0;
 
-  if (skillLevel.level === "Beginner") {
+  if (skillLevel[0].level === "Beginner") {
     let timeAllocation = 5 * 60000;
     timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
-  } else if (skillLevel.level === "Intermediate") {
+  } else if (skillLevel[0].level === "Intermediate") {
     let timeAllocation = 8 * 60000;
     timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
-  } else if (skillLevel.level === "Advance") {
+  } else if (skillLevel[0].level === "Advance") {
     let timeAllocation = 12 * 60000;
     timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
+  }
+
+  function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   }
 
   const dispatch = useDispatch();
@@ -30,12 +35,6 @@ const QuizSummry = (props) => {
   const numberOfCorrectAnswers = answers.filter(
     (ans) => ans.ansId === ans.correctOption
   );
-
-  function millisToMinutesAndSeconds(millis) {
-    var minutes = Math.floor(millis / 60000);
-    var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
 
   function handleOkClick() {
     dispatch(summry());

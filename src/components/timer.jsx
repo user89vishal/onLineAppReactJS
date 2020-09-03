@@ -19,7 +19,7 @@ function Timer({ timeLimit }) {
 
   useEffect(() => {
     console.log("component is mounted");
-    dispatch(initilizeTime(timeLimit));
+    dispatch(initilizeTime(15000));
   }, []);
 
   // const persistedState = loadFromLocalStorage();
