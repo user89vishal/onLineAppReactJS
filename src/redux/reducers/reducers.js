@@ -1,5 +1,5 @@
 const initialState = {
-  counter: 10,
+  counter: 0,
   user: {
     username: "",
     email: "",
@@ -10,14 +10,21 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
-  console.log("state is: ", state);
+  console.log("state is: ", state, action.type);
   switch (action.type) {
+    case "initilizeTime":
+      return {
+        ...state,
+        counter: state.counter === 0 ? action.value : state.counter,
+      };
     case "increment":
       return {
+        ...state,
         counter: state.counter + 1,
       };
     case "decrement":
       return {
+        ...state,
         counter: state.counter - 1,
       };
     case "setStateFromLocalStorage":

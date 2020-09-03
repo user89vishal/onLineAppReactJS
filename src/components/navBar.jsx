@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+
+import Timer from "../components/timer";
 
 const NavBar = ({ handleLogout, skillLevel }) => {
   return (
@@ -26,11 +26,7 @@ const NavBar = ({ handleLogout, skillLevel }) => {
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav text-right">
-          <li className="nav-item active">
-            <a className="nav-link" to="/">
-              Time Remaining 00:32
-            </a>
-          </li>
+          {skillLevel && <Timer />}
           <li
             className="nav-item active"
             style={{ cursor: "pointer" }}

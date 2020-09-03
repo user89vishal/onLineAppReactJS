@@ -1,5 +1,8 @@
+export function initilizeTime(time) {
+  return { type: "initilizeTime", value: time };
+}
+
 export function increment() {
-  console.log("In actions");
   return { type: "increment" };
 }
 

@@ -26,6 +26,7 @@ function App(props) {
 
   return (
     <main>
+      {/* <Timer /> */}
       {/* <Questions /> */}
       <Switch>
         <Route path="/viewInfo" component={ViewInfo} />

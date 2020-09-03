@@ -22,7 +22,7 @@ function loadFromLocalStorage() {
 }
 
 const persistedState = loadFromLocalStorage();
-console.log("persistedState", persistedState);
+// console.log("persistedState", persistedState);
 
 const store = createStore(
   rootReducer,
