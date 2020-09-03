@@ -18,3 +18,11 @@ export function saveUser(user) {
 export function saveOption(option) {
   return { type: "saveOption", value: option };
 }
+
+export function setSkillLevel(skill) {
+  return { type: "setSkillLevel", value: skill };
+}
+
+export function summry() {
+  return { type: "summry" };
+}

@@ -6,6 +6,7 @@ const initialState = {
     password: "",
   },
   answers: [],
+  skillLevel: 0,
 };
 
 function reducer(state = initialState, action) {
@@ -31,33 +32,37 @@ function reducer(state = initialState, action) {
       };
     case "logout":
       return {
-        ...state,
-        user: {
-          username: "",
-          email: "",
-          password: "",
-        },
+        state: undefined,
       };
     case "saveOption":
-      console.log("ForEach", state.answers);
-      const val = state.answers.map((ans, index) =>
-        ans.ansId === action.value.ansId
-          ? [...state.answers.splice(index, 0, action.value)]
-          : [...state.answers, action.value]
-      );
-      console.log("value is", val);
       return {
         ...state,
-        answers: [...state.answers, action.value],
+        answers: state.answers
+          ? [
+              ...state.answers.filter(
+                (ans) => ans.qusId !== action.value.qusId
+              ),
+              action.value,
+            ]
+          : [action.value],
       };
+    case "setSkillLevel":
+      return {
+        ...state,
+        skillLevel: action.value,
+      };
+    case "summry": {
+      return {
+        ...state,
+        skillLevel: undefined,
+        counter: undefined,
+        answers: undefined,
+      };
+    }
+
     default:
       return state;
   }
 }
 
 export default reducer;
-
-// answers: state.answers.map((ans, index) =>
-// ans.ansId === action.value.ansId
-//   ? [...state.answers.splice(index, 0, action.value)]
-//   : [...state.answers, action.value]

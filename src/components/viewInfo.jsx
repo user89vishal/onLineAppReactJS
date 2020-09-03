@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import _ from "lodash";
 
 import QuizInfo from "./quizInfo";
+import { setSkillLevel, logout } from "../redux/action/actions";
+import NavBar from "../components/navBar";
 
 const examLevel = [
   {
@@ -32,10 +34,14 @@ const examLevel = [
 ];
 
 const ViewInfo = (props) => {
-  const [levelId, setLevelId] = useState(0);
+  const [userLevel, setUserLevelId] = useState({
+    userLevelId: 0,
+    userLevelName: "",
+  });
   const [agree, setAgree] = useState(false);
 
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!user.email) {
@@ -46,56 +52,78 @@ const ViewInfo = (props) => {
   }, []);
 
   const handleClick = (level) => {
-    setLevelId(level.levelId);
+    console.log("Level is:: ", level);
+    setUserLevelId({
+      ...userLevel,
+      userLevelId: level.levelId,
+      userLevelName: level.level,
+    });
+    console.log("Level id:: ", userLevel);
   };
 
   const handleStartButton = () => {
-    console.log("Quiz start", levelId, agree);
+    //save levelId to redux
+
+    const examToProceed = examLevel.filter(
+      (exam) => exam.levelId === userLevel.userLevelId
+    );
+
+    dispatch(setSkillLevel(examToProceed));
     props.history.push({
       pathname: "/quiz-start",
-      state: { levelId: levelId, agree: agree },
+      state: { levelId: userLevel.userLevelId, agree: agree },
+    });
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    props.history.replace({
+      pathname: "/",
     });
   };
 
   return (
-    <div className="container">
-      <h5 className="mt-3">Welcome {user.username.toUpperCase()}</h5>
-      <ul className="list-group mt-5">
-        {examLevel.map((level) => (
-          <li
-            key={level.levelId}
-            className={
-              levelId === level.levelId
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            onClick={() => handleClick(level)}
-          >
-            <QuizInfo examInfo={level} />
-          </li>
-        ))}
-      </ul>
-      <div class="form-check mt-3">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-          onClick={() => setAgree(!agree)}
-        />
-        <label className="form-check-label" for="exampleCheck1">
-          Agree with term and conditions
-        </label>
-      </div>
+    <div>
+      <NavBar handleLogout={handleLogout} />
+      <div className="container">
+        <h5 className="mt-3">{`Welcome ${user.username.toUpperCase()}, choose your skill level and terms to proceed.`}</h5>
+        <ul className="list-group mt-5">
+          {examLevel.map((level) => (
+            <li
+              key={level.levelId}
+              className={
+                userLevel.userLevelId === level.levelId
+                  ? "list-group-item active"
+                  : "list-group-item"
+              }
+              onClick={() => handleClick(level)}
+            >
+              <QuizInfo examInfo={level} />
+            </li>
+          ))}
+        </ul>
+        <div class="form-check mt-3">
+          <input
+            type="checkbox"
+            className="form-check-input"
+            id="exampleCheck1"
+            onClick={() => setAgree(!agree)}
+          />
+          <label className="form-check-label" for="exampleCheck1">
+            Agree with term and conditions
+          </label>
+        </div>
 
-      <div className="d-flex justify-content-center m-4">
-        <button
-          type="button"
-          className="btn btn-outline-success"
-          disabled={!(agree && levelId !== 0)}
-          onClick={handleStartButton}
-        >
-          Start
-        </button>
+        <div className="d-flex justify-content-center m-4">
+          <button
+            type="button"
+            className="btn btn-outline-success"
+            disabled={!(agree && userLevel.userLevelId !== 0)}
+            onClick={handleStartButton}
+          >
+            Start
+          </button>
+        </div>
       </div>
     </div>
   );
