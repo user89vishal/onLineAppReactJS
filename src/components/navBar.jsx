@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-const NavBar = ({ handleLogout }) => {
+const NavBar = ({ handleLogout, skillLevel }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        Online Test Application
-      </Link>
+      <li className="navbar-brand">Online Test Application</li>
+      {skillLevel && (
+        <li className="navbar-brand">{`Skill Level: ${skillLevel}`}</li>
+      )}
       <button
         className="navbar-toggler"
         type="button"

@@ -1,71 +1,668 @@
 {
-  "questions": [
-    {
-      "id": 1,
-      "question": "Which one is standard way to show popup in Java Script?",
-      "answers": [
-        { "OptionId": "A", "ans": "window.alert(cppbuzz)" },
-        { "OptionId": "B", "ans": "alert(cppbuzz)" },
-        { "OptionId": "C", "ans": "window(cppbuzz)" },
-        { "OptionId": "D", "ans": "alert(cppbuzz)" }
-      ],
-      "correctOption": "A"
-    },
-    {
-      "id": 2,
-      "question": "Which of the following function of String object returns the character at the specified index?",
-      "answers": [
-        { "OptionId": "A", "ans": "charAt()" },
-        { "OptionId": "B", "ans": "charCodeAt()" },
-        { "OptionId": "C", "ans": "concat()" },
-        { "OptionId": "D", "ans": "indexOf()" }
-      ],
-      "correctOption": "A"
-    },
-    {
-      "id": 3,
-      "question": "Which of the following is true about variable naming conventions in JavaScript?",
-      "answers": [
-        {
-          "OptionId": "A",
-          "ans": "You should not use any of the JavaScript reserved keyword as variable name."
-        },
-        {
-          "OptionId": "B",
-          "ans": "JavaScript variable names should not start with a numeral (0-9)"
-        },
-        {
-          "OptionId": "C",
-          "ans": "Both of the above."
-        },
-        {
-          "OptionId": "D",
-          "ans": "None of the above."
-        }
-      ],
-      "correctOption": "A"
-    },
-    {
-      "id": 4,
-      "question": "Which built-in method returns the calling string value converted to upper case?",
-      "answers": [
-        { "OptionId": "A", "ans": "toUpperCase()" },
-        { "OptionId": "B", "ans": "toUpper()" },
-        { "OptionId": "C", "ans": "changeCase(case)" },
-        { "OptionId": "D", "ans": "None of the above." }
-      ],
-      "correctOption": "A"
-    },
-    {
-      "id": 5,
-      "question": "Which of the following function of String object splits a String object into an array of strings by separating the string into substrings?",
-      "answers": [
-        { "OptionId": "A", "ans": "slice()" },
-        { "OptionId": "B", "ans": "split()" },
-        { "OptionId": "C", "ans": "replace()" },
-        { "OptionId": "D", "ans": "search()" }
-      ],
-      "correctOption": "A"
-    }
-  ]
+  "Beginner": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following is true about variable naming conventions in JavaScript?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "You should not use any of the JavaScript reserved keyword as variable name."
+          },
+          {
+            "OptionId": "B",
+            "ans": "JavaScript variable names should not start with a numeral (0-9)."
+          },
+          { "OptionId": "C", "ans": "Both of the above." },
+          { "OptionId": "D", "ans": "None of the above." }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 2,
+        "question": "Which of the following is correct about callbacks",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "A callback is a plain JavaScript function passed to some method as an argument or option."
+          },
+          {
+            "OptionId": "B",
+            "ans": "Some callbacks are just events, called to give the user a chance to react when a certain state is triggered."
+          },
+          { "OptionId": "C", "ans": "Both of the above." },
+          { "OptionId": "D", "ans": "None of the above." }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 3,
+        "question": "Which built-in method returns the calling string value converted to upper case?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "oUpperCase()"
+          },
+          {
+            "OptionId": "B",
+            "ans": "toUpper()"
+          },
+          {
+            "OptionId": "C",
+            "ans": "changeCase(case)"
+          },
+          {
+            "OptionId": "D",
+            "ans": "None of the above."
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 4,
+        "question": "Which of the following function of String object returns the character at the specified index?",
+        "answers": [
+          { "OptionId": "A", "ans": "charAt()" },
+          { "OptionId": "B", "ans": "charCodeAt()" },
+          { "OptionId": "C", "ans": " concat()" },
+          { "OptionId": "D", "ans": "indexOf()" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 5,
+        "question": "Which of the following function of String object splits a String object into an array of strings by separating the string into substrings?",
+        "answers": [
+          { "OptionId": "A", "ans": "slice()" },
+          { "OptionId": "B", "ans": "split()" },
+          { "OptionId": "C", "ans": "replace()" },
+          { "OptionId": "D", "ans": "search()" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 6,
+        "question": "Which of the following function of String object creates a string to be displayed as bold as if it were in a <b> tag?",
+        "answers": [
+          { "OptionId": "A", "ans": "anchor()" },
+          { "OptionId": "B", "ans": "big()" },
+          { "OptionId": "C", "ans": "blink()" },
+          { "OptionId": "D", "ans": "bold()" }
+        ],
+        "correctOption": "D"
+      },
+      {
+        "id": 7,
+        "question": "Which of the following function of String object causes a string to be displayed in the specified size as if it were in a <font size = 'size'> tag?",
+        "answers": [
+          { "OptionId": "A", "ans": "fixed()" },
+          { "OptionId": "B", "ans": "fontcolor()" },
+          { "OptionId": "C", "ans": "fontsize()" },
+          { "OptionId": "D", "ans": "bold()" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 8,
+        "question": "Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?",
+        "answers": [
+          { "OptionId": "A", "ans": "pop()" },
+          { "OptionId": "B", "ans": "push()" },
+          { "OptionId": "C", "ans": "reduce()" },
+          { "OptionId": "D", "ans": "reduceRight()" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 9,
+        "question": "Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?",
+        "answers": [
+          { "OptionId": "A", "ans": "pop()" },
+          { "OptionId": "B", "ans": "push()" },
+          { "OptionId": "C", "ans": "reduce()" },
+          { "OptionId": "D", "ans": "reduceRight()" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 10,
+        "question": "What is the HTML tag under which one can write the JavaScript code?",
+        "answers": [
+          { "OptionId": "A", "ans": "<javascript>" },
+          { "OptionId": "B", "ans": "<scripted>" },
+          { "OptionId": "C", "ans": "<script>" },
+          { "OptionId": "D", "ans": "<js>" }
+        ],
+        "correctOption": "C"
+      }
+    ]
+  },
+  "Intermediate": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following is a server-side Java Script object?",
+        "answers": [
+          { "OptionId": "A", "ans": "Function" },
+          { "OptionId": "B", "ans": "File" },
+          { "OptionId": "C", "ans": "FileUpload" },
+          { "OptionId": "D", "ans": "Date" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 2,
+        "question": "How does Java Script store dates in objects of Date type?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "The number of days since January 1st, 1900"
+          },
+          {
+            "OptionId": "B",
+            "ans": "The number of seconds since January 1st, 1970"
+          },
+          {
+            "OptionId": "C",
+            "ans": "The number of milliseconds since January 1st, 1970"
+          },
+          {
+            "OptionId": "D",
+            "ans": "The number of picoseconds since January 1st, 1970"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 3,
+        "question": "Which of the following is true about variable naming conventions in JavaScript?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "You should not use any of the JavaScript reserved keyword as variable name."
+          },
+          {
+            "OptionId": "B",
+            "ans": "JavaScript variable names should not start with a numeral (0-9)"
+          },
+          {
+            "OptionId": "C",
+            "ans": "Both of the above."
+          },
+          {
+            "OptionId": "D",
+            "ans": "None of the above."
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 4,
+        "question": "Intermediate Which built-in method returns the calling string value converted to upper case?",
+        "answers": [
+          { "OptionId": "A", "ans": "toUpperCase()" },
+          { "OptionId": "B", "ans": "toUpper()" },
+          { "OptionId": "C", "ans": "changeCase(case)" },
+          { "OptionId": "D", "ans": "None of the above." }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 5,
+        "question": "Intermediate Which of the following function of String object splits a String object into an array of strings by separating the string into substrings?",
+        "answers": [
+          { "OptionId": "A", "ans": "slice()" },
+          { "OptionId": "B", "ans": "split()" },
+          { "OptionId": "C", "ans": "replace()" },
+          { "OptionId": "D", "ans": "search()" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 6,
+        "question": "Which of the following is correct to write “Hello World” on the web page?",
+        "answers": [
+          { "OptionId": "A", "ans": "System.out.println(“Hello World”)" },
+          { "OptionId": "B", "ans": "print(“Hello World”)" },
+          { "OptionId": "C", "ans": "document.write(“Hello World”)" },
+          { "OptionId": "D", "ans": "esponse.write(“Hello World”)" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 7,
+        "question": "Which of the following is the tainted property of a window object in Java Script?",
+        "answers": [
+          { "OptionId": "A", "ans": "Pathname" },
+          { "OptionId": "B", "ans": "Protocol" },
+          { "OptionId": "C", "ans": "Defaultstatus" },
+          { "OptionId": "D", "ans": "Host" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 8,
+        "question": "Which attribute needs to be changed to make elements invisible?",
+        "answers": [
+          { "OptionId": "A", "ans": "visibilty" },
+          { "OptionId": "B", "ans": "visible" },
+          { "OptionId": "C", "ans": "nvisibility" },
+          { "OptionId": "D", "ans": "invisible" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 9,
+        "question": "Which of the following is used to capture all click events in a window?",
+        "answers": [
+          { "OptionId": "A", "ans": "window.captureEvents(Event.CLICK);" },
+          { "OptionId": "B", "ans": "window.routeEvents(Event.CLICK );" },
+          { "OptionId": "C", "ans": "window.handleEvents (Event.CLICK);" },
+          { "OptionId": "D", "ans": "window.raiseEvents(Event.CLICK );" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 10,
+        "question": "Which of the following is not a valid JavaScript variable name?",
+        "answers": [
+          { "OptionId": "A", "ans": "2java" },
+          { "OptionId": "B", "ans": "_java_and_ java _names" },
+          { "OptionId": "C", "ans": "javaandjava" },
+          { "OptionId": "D", "ans": "None of the above" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 11,
+        "question": "Which of the ways below is incorrect of instantiating a date?",
+        "answers": [
+          { "OptionId": "A", "ans": "new Date(dateString)" },
+          { "OptionId": "B", "ans": "new Date()" },
+          { "OptionId": "C", "ans": "new Date(seconds)" },
+          {
+            "OptionId": "D",
+            "ans": "new Date(year, month, day, hours, minutes, seconds, milliseconds)"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 12,
+        "question": "What is negative infinity in Java script?",
+        "answers": [
+          { "OptionId": "A", "ans": "Any of below" },
+          {
+            "OptionId": "B",
+            "ans": "number in JavaScript, derived by dividing number by a negative number."
+          },
+          {
+            "OptionId": "C",
+            "ans": "number in JavaScript, derived by dividing number by zero."
+          },
+          {
+            "OptionId": "D",
+            "ans": "number in JavaScript, derived by dividing negative number by zero"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 13,
+        "question": "___________ JavaScript is also called client-side JavaScript.",
+        "answers": [
+          { "OptionId": "A", "ans": "Microsoft" },
+          {
+            "OptionId": "B",
+            "ans": "Navigator"
+          },
+          {
+            "OptionId": "C",
+            "ans": "LiveWire"
+          },
+          {
+            "OptionId": "D",
+            "ans": "Native"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 14,
+        "question": "What language defines the behavior of a web page?",
+        "answers": [
+          { "OptionId": "A", "ans": "HTML" },
+          {
+            "OptionId": "B",
+            "ans": "CSS"
+          },
+          {
+            "OptionId": "C",
+            "ans": "XML"
+          },
+          {
+            "OptionId": "D",
+            "ans": "Java Script"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 15,
+        "question": "Why so Java and JavaScript have similar name?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "Java Script is a stripped-down version of Java"
+          },
+          {
+            "OptionId": "B",
+            "ans": "The syntax of JavaScript is loosely based on Java syntax"
+          },
+          {
+            "OptionId": "C",
+            "ans": "They both support Object Oriented Programming"
+          },
+          {
+            "OptionId": "D",
+            "ans": "None of the above"
+          }
+        ],
+        "correctOption": "A"
+      }
+    ]
+  },
+  "Advance": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following data structure is more appropriate to represent a heap?",
+        "answers": [
+          { "OptionId": "A", "ans": "Two-dimensional array" },
+          { "OptionId": "B", "ans": "Doubly linked list" },
+          { "OptionId": "C", "ans": "Linear Array" },
+          { "OptionId": "D", "ans": "Linked list" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 2,
+        "question": "Minimum number of fields in each node of a doubly linked list is ____",
+        "answers": [
+          { "OptionId": "A", "ans": "2" },
+          { "OptionId": "B", "ans": "3" },
+          { "OptionId": "C", "ans": "4" },
+          { "OptionId": "D", "ans": "None of above" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 3,
+        "question": "A graph in which all vertices have equal degree is known as ____",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "Complete graph"
+          },
+          {
+            "OptionId": "B",
+            "ans": "Regular graph"
+          },
+          {
+            "OptionId": "C",
+            "ans": "Multi graph"
+          },
+          {
+            "OptionId": "D",
+            "ans": "Simple graph"
+          }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 4,
+        "question": "A vertex of in-degree zero in a directed graph is called a/an?",
+        "answers": [
+          { "OptionId": "A", "ans": "Root vertex" },
+          { "OptionId": "B", "ans": "Isolated vertex" },
+          { "OptionId": "C", "ans": "Sink" },
+          { "OptionId": "D", "ans": "Articulation point" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 5,
+        "question": "A graph is a tree if and only if graph is",
+        "answers": [
+          { "OptionId": "A", "ans": "Directed graph" },
+          { "OptionId": "B", "ans": "Contains no cycles" },
+          { "OptionId": "C", "ans": "Planar" },
+          { "OptionId": "D", "ans": "Completely connected" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 6,
+        "question": "Which of the following piece of information does the data type to the compiler provide?",
+        "answers": [
+          { "OptionId": "A", "ans": "The way the data is to be interpreted" },
+          { "OptionId": "B", "ans": "Range of values" },
+          { "OptionId": "C", "ans": "Amount of memory a data element uses" },
+          { "OptionId": "D", "ans": "All of above" }
+        ],
+        "correctOption": "D"
+      },
+      {
+        "id": 7,
+        "question": "The elements of a linked list are stored",
+        "answers": [
+          { "OptionId": "A", "ans": "In a structure" },
+          { "OptionId": "B", "ans": "In an array" },
+          {
+            "OptionId": "C",
+            "ans": "Anywhere the computer has space for them"
+          },
+          { "OptionId": "D", "ans": "In contiguous memory locations" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 8,
+        "question": "A parentheses checker program would be best implemented using",
+        "answers": [
+          { "OptionId": "A", "ans": "List" },
+          { "OptionId": "B", "ans": "Queue" },
+          {
+            "OptionId": "C",
+            "ans": "Stack"
+          },
+          { "OptionId": "D", "ans": "Any of the above" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 9,
+        "question": "To perform level-order traversal on a binary tree, which of the following data structure will be required?",
+        "answers": [
+          { "OptionId": "A", "ans": "Hash table" },
+          { "OptionId": "B", "ans": "Queue" },
+          {
+            "OptionId": "C",
+            "ans": "Binary search tree"
+          },
+          { "OptionId": "D", "ans": "Stack" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 10,
+        "question": "Which of the following data structure is required to convert arithmetic expression in infix to its equivalent postfix notation?",
+        "answers": [
+          { "OptionId": "A", "ans": "Queue" },
+          { "OptionId": "B", "ans": "Linked list" },
+          {
+            "OptionId": "C",
+            "ans": "Binary search tree"
+          },
+          { "OptionId": "D", "ans": "None of above" }
+        ],
+        "correctOption": "D"
+      },
+      {
+        "id": 11,
+        "question": "A binary tree in which all its levels except the last, have maximum numbers of nodes, and all the nodes in the last level have only one child it will be its left child. Name the tree.",
+        "answers": [
+          { "OptionId": "A", "ans": "Threaded tree" },
+          { "OptionId": "B", "ans": "Complete binary tree" },
+          {
+            "OptionId": "C",
+            "ans": "M-way search tree"
+          },
+          { "OptionId": "D", "ans": "Full binary tree" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 12,
+        "question": "Which of following data structure is more appropriate for implementing quick sort iteratively?",
+        "answers": [
+          { "OptionId": "A", "ans": "Deque" },
+          { "OptionId": "B", "ans": "Queue" },
+          {
+            "OptionId": "C",
+            "ans": "Stack"
+          },
+          { "OptionId": "D", "ans": "Priority queue" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 13,
+        "question": "The number of edges in a complete graph of n vertices is",
+        "answers": [
+          { "OptionId": "A", "ans": "n(n+1)/2" },
+          { "OptionId": "B", "ans": "n(n-1)/2" },
+          {
+            "OptionId": "C",
+            "ans": "n2/2"
+          },
+          { "OptionId": "D", "ans": "n" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 14,
+        "question": "If two trees have same structure and but different node content, then they are called ___",
+        "answers": [
+          { "OptionId": "A", "ans": "Synonyms trees" },
+          { "OptionId": "B", "ans": "Joint trees" },
+          {
+            "OptionId": "C",
+            "ans": "Equivalent trees"
+          },
+          { "OptionId": "D", "ans": "Similar trees" }
+        ],
+        "correctOption": "D"
+      },
+      {
+        "id": 15,
+        "question": "If two trees have same structure and node content, then they are called ____",
+        "answers": [
+          { "OptionId": "A", "ans": "Synonyms trees" },
+          { "OptionId": "B", "ans": "Joint trees" },
+          { "OptionId": "C", "ans": "Equivalent trees" },
+          { "OptionId": "D", "ans": "Similar trees" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 16,
+        "question": "Why so JavaScript and Java have similar name?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "JavaScript is a stripped-down version of Java"
+          },
+          {
+            "OptionId": "B",
+            "ans": "JavaScript's syntax is loosely based on Java's"
+          },
+          {
+            "OptionId": "C",
+            "ans": "They both originated on the island of Java"
+          },
+          { "OptionId": "D", "ans": "None of the above" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 17,
+        "question": "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "The User's machine running a Web browser"
+          },
+          { "OptionId": "B", "ans": "The Web server" },
+          {
+            "OptionId": "C",
+            "ans": "A central machine deep within Netscape's corporate offices"
+          },
+          { "OptionId": "D", "ans": "None of the above" }
+        ],
+        "correctOption": "A"
+      },
+      {
+        "id": 18,
+        "question": "______ JavaScript is also called client-side JavaScript.",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "Microsoft"
+          },
+          { "OptionId": "B", "ans": "Navigator" },
+          {
+            "OptionId": "C",
+            "ans": "LiveWire"
+          },
+          { "OptionId": "D", "ans": "Native" }
+        ],
+        "correctOption": "B"
+      },
+      {
+        "id": 19,
+        "question": "__________ JavaScript is also called server-side JavaScript.",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "Microsoft"
+          },
+          { "OptionId": "B", "ans": "Navigator" },
+          {
+            "OptionId": "C",
+            "ans": "LiveWire"
+          },
+          { "OptionId": "D", "ans": "Native" }
+        ],
+        "correctOption": "C"
+      },
+      {
+        "id": 20,
+        "question": "What are variables used for in JavaScript Programs?",
+        "answers": [
+          {
+            "OptionId": "A",
+            "ans": "Storing numbers, dates, or other values"
+          },
+          { "OptionId": "B", "ans": "Varying randomly" },
+          {
+            "OptionId": "C",
+            "ans": "Causing high-school algebra flashbacks"
+          },
+          { "OptionId": "D", "ans": "None of the above" }
+        ],
+        "correctOption": "A"
+      }
+    ]
+  }
 }

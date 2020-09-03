@@ -1,5 +1,6 @@
-import React from "react";
-import { Route, Switch, Redirect, Router } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./App.css";
 import Timer from "./components/timer";
@@ -8,8 +9,21 @@ import Register from "./components/register";
 import ViewInfo from "./components/viewInfo";
 import NotFound from "./components/notFound";
 import QuizSummry from "./components/quizSummry";
+import { logout } from "./redux/action/actions";
 
-function App() {
+function App(props) {
+  // const user = useSelector((state) => state.user);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   if (user === undefined) {
+  //     dispatch(logout());
+  //     props.history.push({
+  //       pathname: "/",
+  //     });
+  //   }
+  // }, [user]);
+
   return (
     <main>
       {/* <Questions /> */}

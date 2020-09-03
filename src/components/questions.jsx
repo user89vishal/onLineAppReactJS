@@ -9,9 +9,13 @@ import dataFromJsonFile from "../service/allQuestions.json";
 import { logout } from "../redux/action/actions";
 
 function Question(props) {
-  const questions = dataFromJsonFile.questions;
+  const skillLevel = useSelector((state) => state.skillLevel);
+
+  //get the user's selected level
+  const examLevel = skillLevel[0].level;
+  const questions = dataFromJsonFile[examLevel].questions;
+
   const [pageNumber, setPageNumber] = useState(0);
-  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -49,7 +53,7 @@ function Question(props) {
 
   return (
     <div>
-      <NavBar handleLogout={handleLogout} />
+      <NavBar skillLevel={skillLevel[0].level} handleLogout={handleLogout} />
       <div className="container">
         <ViewQuestion
           pageNumber={pageNumber}
