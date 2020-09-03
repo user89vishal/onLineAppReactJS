@@ -10,12 +10,13 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
-  console.log("state is: ", state, action.type);
+  console.log("state is: ", state, "::::", action.type);
   switch (action.type) {
     case "initilizeTime":
       return {
         ...state,
-        counter: state.counter === 0 ? action.value : state.counter,
+        counter:
+          state.counter === (undefined || 0) ? action.value : state.counter,
       };
     case "increment":
       return {
@@ -25,7 +26,7 @@ function reducer(state = initialState, action) {
     case "decrement":
       return {
         ...state,
-        counter: state.counter - 1,
+        counter: state.counter === 0 ? 0 : state.counter - 1000,
       };
     case "setStateFromLocalStorage":
       return {
@@ -38,9 +39,16 @@ function reducer(state = initialState, action) {
         user: action.value,
       };
     case "logout":
-      return {
-        state: undefined,
-      };
+      return Object.assign({}, state, {
+        counter: 0,
+        user: {
+          username: "",
+          email: "",
+          password: "",
+        },
+        answers: [],
+        skillLevel: 0,
+      });
     case "saveOption":
       return {
         ...state,
@@ -59,12 +67,12 @@ function reducer(state = initialState, action) {
         skillLevel: action.value,
       };
     case "summry": {
-      return {
+      return Object.assign({}, state, {
         ...state,
-        skillLevel: undefined,
-        counter: undefined,
-        answers: undefined,
-      };
+        counter: 0,
+        answers: [],
+        skillLevel: 0,
+      });
     }
 
     default:

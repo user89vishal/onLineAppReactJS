@@ -3,6 +3,18 @@ import React from "react";
 import Timer from "../components/timer";
 
 const NavBar = ({ handleLogout, skillLevel }) => {
+  console.log("In navBar skillLevel", skillLevel);
+  let timeAllocation = 0;
+
+  if (skillLevel === "Beginner") {
+    timeAllocation = 5 * 60000;
+  } else if (skillLevel === "Intermediate") {
+    timeAllocation = 8 * 60000;
+  } else if (skillLevel === "Advance") {
+    timeAllocation = 12 * 60000;
+  }
+
+  console.log("timeAllocation: ", timeAllocation);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <li className="navbar-brand">Online Test Application</li>
@@ -26,7 +38,7 @@ const NavBar = ({ handleLogout, skillLevel }) => {
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav text-right">
-          {skillLevel && <Timer />}
+          {skillLevel && <Timer timeLimit={timeAllocation} />}
           <li
             className="nav-item active"
             style={{ cursor: "pointer" }}

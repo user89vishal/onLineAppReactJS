@@ -10,6 +10,7 @@ import { logout } from "../redux/action/actions";
 
 function Question(props) {
   const skillLevel = useSelector((state) => state.skillLevel);
+  // const counter = useSelector((state) => state.counter);
 
   //get the user's selected level
   const examLevel = skillLevel[0].level;
@@ -25,6 +26,10 @@ function Question(props) {
   //     });
   //   }
   // }, []);
+
+  // if (counter === 0) {
+  //   alert("Time's up");
+  // }
 
   const handlePageChange = (page) => {
     if (page === "Previous" && pageNumber !== 0) {
