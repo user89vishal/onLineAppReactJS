@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import _ from "lodash";
 
 import QuizInfo from "./quizInfo";
-import { setSkillLevel, logout } from "../redux/action/actions";
+import { setSkillLevel, logout, initilizeTime } from "../redux/action/actions";
 import NavBar from "../components/navBar";
 
 const examLevel = [
@@ -38,40 +37,48 @@ const ViewInfo = (props) => {
     userLevelId: 0,
     userLevelName: "",
   });
+  //term and conditions agree checkbox
   const [agree, setAgree] = useState(false);
 
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!user.email) {
-      props.history.replace({
-        pathname: "/",
-      });
-    }
-  }, []);
-
   const handleClick = (level) => {
-    console.log("Level is:: ", level);
     setUserLevelId({
       ...userLevel,
       userLevelId: level.levelId,
       userLevelName: level.level,
     });
-    console.log("Level id:: ", userLevel);
   };
 
   const handleStartButton = () => {
-    //save levelId to redux
-
+    // save levelId to redux
+    let timeAllocation = 0;
     const examToProceed = examLevel.filter(
       (exam) => exam.levelId === userLevel.userLevelId
     );
 
+    if (userLevel.userLevelId === 1) {
+      timeAllocation = 5 * 60000;
+    } else if (userLevel.userLevelId === 2) {
+      timeAllocation = 8 * 60000;
+    } else if (userLevel.userLevelId === 3) {
+      timeAllocation = 12 * 60000;
+    }
+
+    console.log(
+      "viewInfo candidate levelId : =====>>>>>",
+      userLevel.userLevelId
+    );
+    console.log("viewInfo initilizeTime : =====>>>>>", timeAllocation);
+
+    //initilize time for quiz
+    dispatch(initilizeTime(timeAllocation));
+
+    //save quiz level in redux
     dispatch(setSkillLevel(examToProceed));
     props.history.push({
       pathname: "/quiz-start",
-      state: { levelId: userLevel.userLevelId, agree: agree },
     });
   };
 
@@ -130,3 +137,18 @@ const ViewInfo = (props) => {
 };
 
 export default ViewInfo;
+
+//
+// at line number 46 useEffect(() => {
+//   if (!user.email) {
+//     props.history.replace({
+//       pathname: "/",
+//     });
+//   }
+// }, []);
+
+//at line 78   props.history.push({
+//     pathname: "/quiz-start",
+//     state: { levelId: userLevel.userLevelId, agree: agree },
+//   });
+// };

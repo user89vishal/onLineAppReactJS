@@ -15,8 +15,9 @@ function reducer(state = initialState, action) {
     case "initilizeTime":
       return {
         ...state,
-        counter:
-          state.counter === (undefined || 0) ? action.value : state.counter,
+        // counter:
+        //   state.counter === (undefined || 0) ? action.value : state.counter,
+        counter: (state.counter = action.value),
       };
     case "increment":
       return {

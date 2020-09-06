@@ -3,33 +3,28 @@ import { useSelector, useDispatch } from "react-redux";
 
 import ViewQuestion from "./ViewQuestion";
 import Pagination from "../common/pagination";
-import "./questions.css";
 import NavBar from "../components/navBar";
 import dataFromJsonFile from "../service/allQuestions.json";
 import { logout } from "../redux/action/actions";
 
 function Question(props) {
   const skillLevel = useSelector((state) => state.skillLevel);
-  // const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.counter);
 
-  //get the user's selected level
+  //get the user's skill level
   const examLevel = skillLevel[0].level;
   const questions = dataFromJsonFile[examLevel].questions;
 
   const [pageNumber, setPageNumber] = useState(0);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (user.email !== "") {
-  //     props.history.replace({
-  //       pathname: "/",
-  //     });
-  //   }
-  // }, []);
-
-  // if (counter === 0) {
-  //   alert("Time's up");
-  // }
+  //if counter is 0 means time's up
+  if (counter === 0) {
+    props.history.replace({
+      pathname: "/summry",
+      state: { info: "Time's Up" },
+    });
+  }
 
   const handlePageChange = (page) => {
     if (page === "Previous" && pageNumber !== 0) {
@@ -77,3 +72,12 @@ function Question(props) {
 }
 
 export default Question;
+
+//at line 21
+// useEffect(() => {
+//   if (user.email !== "") {
+//     props.history.replace({
+//       pathname: "/",
+//     });
+//   }
+// }, []);

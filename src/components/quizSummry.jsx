@@ -1,36 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 
 import { logout, summry } from "../redux/action/actions";
+import { timeTakenForQuiz } from "../common/calculateTime";
 import NavBar from "../components/navBar";
-import QuizInfo from "./quizInfo";
 
 const QuizSummry = (props) => {
   const answers = useSelector((state) => state.answers);
   const skillLevel = useSelector((state) => state.skillLevel);
   const user = useSelector((state) => state.user);
   const counter = useSelector((state) => state.counter);
-
-  let timeTaken = 0;
-
-  if (skillLevel[0].level === "Beginner") {
-    let timeAllocation = 5 * 60000;
-    timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
-  } else if (skillLevel[0].level === "Intermediate") {
-    let timeAllocation = 8 * 60000;
-    timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
-  } else if (skillLevel[0].level === "Advance") {
-    let timeAllocation = 12 * 60000;
-    timeTaken = millisToMinutesAndSeconds(timeAllocation - counter);
-  }
-
-  function millisToMinutesAndSeconds(millis) {
-    var minutes = Math.floor(millis / 60000);
-    var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
-
   const dispatch = useDispatch();
+  const candidateLevel = skillLevel[0].level;
+
+  let timeTaken = timeTakenForQuiz(candidateLevel, counter);
 
   const numberOfCorrectAnswers = answers.filter(
     (ans) => ans.ansId === ans.correctOption
@@ -50,10 +34,31 @@ const QuizSummry = (props) => {
     });
   };
 
+  useEffect(() => {
+    // fetch("http://localhost:9000/")
+    //   .then((res) => res.text())
+    //   .then((res) => console.log("Response isssss=======>", res));
+
+    let candidateDetails = {
+      candidateName: user.username.toUpperCase(),
+      candidateEmail: user.email,
+      candidateAnswers: answers,
+    };
+
+    console.log("Candidate's details: ", candidateDetails);
+
+    axios
+      .post("http://localhost:9000/api/report", candidateDetails)
+      .then((res) => console.log("Response isssss=======>", res));
+  }, []);
+
   return (
     <div>
       <NavBar handleLogout={handleLogout} />
       <div className="container justify-content-center mt-4">
+        {props.location.state !== undefined ? (
+          <h5>{props.location.state.info}</h5>
+        ) : null}
         <div>
           <h5>{`Hello ${user.username.toUpperCase()}, your test result is as follows`}</h5>
         </div>

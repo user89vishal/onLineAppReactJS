@@ -7,15 +7,15 @@ function ViewQuestion(props) {
   const [optionId, setOptionId] = useState("");
   const [questionId, setQuestionId] = useState("");
 
-  const answers = useSelector((state) => state.answers);
-
   const dispatch = useDispatch();
 
+  //question's option click
   const handleListClick = (optionObject) => {
     setOptionId(optionObject.OptionId);
     setQuestionId(data[pageNumber].id);
   };
 
+  //submitting the option for the question
   function handleClick() {
     dispatch(
       saveOption({
@@ -66,3 +66,5 @@ function ViewQuestion(props) {
 }
 
 export default ViewQuestion;
+
+//at line 10 const answers = useSelector((state) => state.answers);

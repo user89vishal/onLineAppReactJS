@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { initilizeTime } from "../redux/action/actions";
 import "./timer.css";
 
-function Timer({ timeLimit }) {
+function Timer(props) {
+  const { timeLimit } = props;
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
-
   console.log("timeLimit: ", timeLimit);
 
   useEffect(() => {
@@ -16,11 +15,6 @@ function Timer({ timeLimit }) {
         dispatch({ type: "decrement" });
       }, 1000);
   }, [counter]);
-
-  useEffect(() => {
-    console.log("component is mounted");
-    dispatch(initilizeTime(15000));
-  }, []);
 
   // const persistedState = loadFromLocalStorage();
 
