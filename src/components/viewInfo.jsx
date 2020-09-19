@@ -66,12 +66,6 @@ const ViewInfo = (props) => {
       timeAllocation = 12 * 60000;
     }
 
-    console.log(
-      "viewInfo candidate levelId : =====>>>>>",
-      userLevel.userLevelId
-    );
-    console.log("viewInfo initilizeTime : =====>>>>>", timeAllocation);
-
     //initilize time for quiz
     dispatch(initilizeTime(timeAllocation));
 
@@ -116,7 +110,7 @@ const ViewInfo = (props) => {
             id="exampleCheck1"
             onClick={() => setAgree(!agree)}
           />
-          <label className="form-check-label" for="exampleCheck1">
+          <label className="form-check-label" htmlFor="exampleCheck1">
             Agree with term and conditions
           </label>
         </div>
@@ -137,18 +131,3 @@ const ViewInfo = (props) => {
 };
 
 export default ViewInfo;
-
-//
-// at line number 46 useEffect(() => {
-//   if (!user.email) {
-//     props.history.replace({
-//       pathname: "/",
-//     });
-//   }
-// }, []);
-
-//at line 78   props.history.push({
-//     pathname: "/quiz-start",
-//     state: { levelId: userLevel.userLevelId, agree: agree },
-//   });
-// };

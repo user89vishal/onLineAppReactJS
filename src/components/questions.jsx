@@ -72,12 +72,3 @@ function Question(props) {
 }
 
 export default Question;
-
-//at line 21
-// useEffect(() => {
-//   if (user.email !== "") {
-//     props.history.replace({
-//       pathname: "/",
-//     });
-//   }
-// }, []);

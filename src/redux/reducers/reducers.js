@@ -10,13 +10,10 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
-  console.log("state is: ", state, "::::", action.type);
   switch (action.type) {
     case "initilizeTime":
       return {
         ...state,
-        // counter:
-        //   state.counter === (undefined || 0) ? action.value : state.counter,
         counter: (state.counter = action.value),
       };
     case "increment":

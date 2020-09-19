@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { saveUser } from "../redux/action/actions";
 
@@ -9,16 +9,6 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
   const [errors, setErrors] = useState({});
-
-  const user = useSelector((state) => state.user);
-
-  // useEffect(() => {
-  //   if (user.email) {
-  //     props.history.replace({
-  //       pathname: "/viewInfo",
-  //     });
-  //   }
-  // }, []);
 
   const dispatch = useDispatch();
 

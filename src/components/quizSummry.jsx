@@ -35,10 +35,6 @@ const QuizSummry = (props) => {
   };
 
   useEffect(() => {
-    // fetch("http://localhost:9000/")
-    //   .then((res) => res.text())
-    //   .then((res) => console.log("Response isssss=======>", res));
-
     let candidateDetails = {
       candidateName: user.username.toUpperCase(),
       candidateEmail: user.email,
@@ -48,8 +44,8 @@ const QuizSummry = (props) => {
     console.log("Candidate's details: ", candidateDetails);
 
     axios
-      .post("http://localhost:9000/api/report", candidateDetails)
-      .then((res) => console.log("Response isssss=======>", res));
+      .post("http://localhost:8000/api/report", candidateDetails)
+      .then((res) => console.log("Response", res));
   }, []);
 
   return (

@@ -8,7 +8,7 @@ import ViewInfo from "./components/viewInfo";
 import NotFound from "./components/notFound";
 import QuizSummry from "./components/quizSummry";
 
-function App(props) {
+function App() {
   return (
     <main>
       <Switch>

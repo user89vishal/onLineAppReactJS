@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { saveOption } from "../redux/action/actions";
 
 function ViewQuestion(props) {
@@ -66,5 +66,3 @@ function ViewQuestion(props) {
 }
 
 export default ViewQuestion;
-
-//at line 10 const answers = useSelector((state) => state.answers);
